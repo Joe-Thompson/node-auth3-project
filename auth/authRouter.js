@@ -44,11 +44,11 @@ router.post('/login', async (req, res, next) => {
             userName: user.username,
             department: user.department
         };
-
+console.log(payload);
         const token = jwt.sign(payload, process.env.JWT_PASSCODE);
 
         res.cookie('token', token);
-
+console.log
         res.json({
             message: `Welcome ${user.username}`
         })
